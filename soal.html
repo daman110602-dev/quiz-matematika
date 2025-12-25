@@ -1,0 +1,48 @@
+HIJAU = "\033[92m"
+MERAH = "\033[91m"
+RESET = "\033[0m"
+
+def buat_soal(no, pertanyaan, jawaban):
+    print(f"\n{no}. jawablah pertanyaan ini: ")
+    while True:
+        try:
+            soal = int(input(f"{pertanyaan} "))
+            if soal == jawaban:
+                print(HIJAU + "MANTAP LANJUTKAN" + RESET)
+                break
+            else:
+                print(MERAH + "COBALAGI YA" + RESET)
+        except ValueError:
+            print(MERAH + "Masukkan angka ya!" + RESET)
+
+# Daftar soal
+soal_list = [
+    (1, "berapakah hasil dari 3 x 7 =", 21),
+    (2, "berapakah hasil dari 4 x 4 =", 16),
+    (3, "berapakah hasil dari 8 x 4 =", 32),
+    (4, "berapakah hasil dari 27 : 9 =", 3),
+    (5, "berapakah hasil dari 20 : 5 =", 4),
+    (6, "berapakah hasil dari 12 : 3 =", 4),
+    (7, "berapakah hasil dari 15 : 3 =", 5),
+    (8, "berapakah hasil dari 8 x 3 =", 24),
+    (9, "berapakah hasil dari 6 x 4 =", 24),
+    (10, "berapakah hasil dari 17 + 13 =", 30),
+    (11, "berapakah hasil dari 9 x 6 =", 54),
+    (12, "berapakah hasil dari 11 x 8 =", 88),
+    (13, "berapakah hasil dari 7 x 8 =", 56),
+    (14, "berapakah hasil dari 14 + 31 =", 45),
+    (15, "berapakah hasil dari 98 + 102 =", 200),
+    (16, "berapakah hasil dari 84 + 17 =", 101),
+    (17, "berapakah hasil dari 78 - 27 =", 51),
+    (18, "berapakah hasil dari 109 - 34 =", 75),
+    (19, "berapakah hasil dari 4 x 9 + 6 - 7 =", 35),
+    (20, "berapakah hasil dari 8 x 8 : 16 =", 4),
+    (21, "berapakah hasil dari 22 : 2 x 4 =", 44),
+    (22, "berapakah 25% dari 20000 =", 5000),
+]
+
+# Jalankan quiz
+for no, pertanyaan, jawaban in soal_list:
+    buat_soal(no, pertanyaan, jawaban)
+
+print("\nTERIMA KASIH YA...")
